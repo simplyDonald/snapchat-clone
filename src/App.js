@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 import WebcamCapture from './components/WebcamCapture'
+import Preview from './components/Preview';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <div className="app__body">
           <Routes>
             <Route path="/" element={      <WebcamCapture />} />
-            <Route path="/about" element={<div>About</div>} />
+            <Route path="/preview" element={<Preview />} />
             <Route path="*" element={<div>Hi</div>} />
           </Routes>
         </div>
