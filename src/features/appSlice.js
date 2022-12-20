@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  showModal: true
+  user: null,
+  selectedImage: null
 };
 
 
@@ -10,19 +11,28 @@ export const appSlice = createSlice({
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
-    setShowModal: (state) => {
-      state.showModal = !state.showModal;
+    selectImage: (state, action) => {
+      state.selectedImage = action.payload;
     },
-    
-   
+    resetImage: (state) => {
+      state.selectedImage = null;
+    },
+
+    login: (state, action) => {
+      state.user = action.payload;
+    },
+    logout: (state) => {
+      state.user = null;
+    }
   },
- 
+
 });
 
-export const { setShowModal } = appSlice.actions;
+export const { selectImage, resetImage, login, logout } = appSlice.actions;
 
 
-export const selectShowModal = (state) => state.app.showModal;
+export const selectUser = (state) => state.app.user;
+export const selectSelectedImage = (state) => state.app.selectedImage;
 
 
 
