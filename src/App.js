@@ -7,7 +7,7 @@ import Preview from './components/Preview';
 
 function App() {
   return (
-    <div className="app_body">
+    <div className="app">
       <BrowserRouter>
         <div className="app__body">
           <Routes>
