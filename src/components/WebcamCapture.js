@@ -2,8 +2,9 @@ import {useRef, useCallback, useState} from 'react'
 import Webcam from 'react-webcam'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCameraImage, setCameraImage } from '../features/cameraSlice';
 import { useNavigate } from 'react-router-dom';
+import './WebcamCapture.css'
+import { setCameraImage } from '../features/cameraSlice';
 
 const videoConstraints = {
   width: 250,
@@ -19,7 +20,7 @@ function WebcamCapture() {
 
   const navigate = useNavigate();
 
-  const img = useSelector(selectCameraImage)
+
 
 
   const capture = useCallback(()=>{
@@ -45,8 +46,6 @@ function WebcamCapture() {
         onClick={capture}
         fontSize="large"
       />
-
-      <img src={img} alt="" />
 
     </div>
   )
