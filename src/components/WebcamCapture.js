@@ -1,7 +1,7 @@
-import {useRef, useCallback, useState} from 'react'
+import {useRef, useCallback} from 'react'
 import Webcam from 'react-webcam'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './WebcamCapture.css'
 import { setCameraImage } from '../features/cameraSlice';
@@ -27,7 +27,7 @@ function WebcamCapture() {
     const imgSrc = webcamRef.current.getScreenshot();
     dispatch(setCameraImage(imgSrc));
     navigate('/preview');
-  },[dispatch, webcamRef])
+  },[dispatch, webcamRef, navigate])
 
   return (
     <div className="webcamCapture">
