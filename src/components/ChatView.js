@@ -28,11 +28,9 @@ function ChatView() {
           duration={10}
           strokeWidth={6}
           size={50} 
-          colors={[
-            ['#004777', 0.33],
-            ['#F7B801', 0.33],
-            ['#A30000', 0.33],
-          ]}
+          colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+          colorsTime={[7, 5, 2, 0]}
+        
         >
           {({remainingTime}) => {
             if (remainingTime === 0) {
